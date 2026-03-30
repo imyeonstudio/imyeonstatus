@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>프로젝트 현황</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#eaeff1",
+                        "outline": "#737c7f",
+                        "inverse-primary": "#adedfc",
+                        "on-primary": "#ebfbff",
+                        "outline-variant": "#abb3b7",
+                        "surface-container-high": "#e3e9ec",
+                        "primary-fixed": "#adedfc",
+                        "on-secondary-fixed-variant": "#505e64",
+                        "error-container": "#fe8983",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "surface-variant": "#dbe4e7",
+                        "on-primary-fixed-variant": "#1f6471",
+                        "tertiary-fixed": "#dbfce5",
+                        "on-error": "#fff7f6",
+                        "on-surface-variant": "#586064",
+                        "on-secondary-fixed": "#344147",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-surface": "#0c0f10",
+                        "tertiary-container": "#dbfce5",
+                        "on-tertiary-fixed-variant": "#4f6d5b",
+                        "tertiary-fixed-dim": "#ccedd7",
+                        "background": "#f8f9fa",
+                        "error-dim": "#4e0309",
+                        "surface-container-highest": "#dbe4e7",
+                        "primary": "#236774",
+                        "tertiary-dim": "#3d5949",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-fixed": "#d6e5ec",
+                        "on-primary-container": "#0f5a67",
+                        "error": "#9f403d",
+                        "on-error-container": "#752121",
+                        "tertiary": "#486554",
+                        "secondary-fixed-dim": "#c8d7de",
+                        "on-background": "#2b3437",
+                        "surface-tint": "#236774",
+                        "primary-dim": "#105a68",
+                        "on-secondary": "#f1faff",
+                        "on-secondary-container": "#46545a",
+                        "primary-fixed-dim": "#9fdeee",
+                        "secondary-container": "#d6e5ec",
+                        "secondary": "#536167",
+                        "surface-dim": "#d1dce0",
+                        "on-primary-fixed": "#004651",
+                        "on-tertiary-fixed": "#33503f",
+                        "primary-container": "#adedfc",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-surface": "#2b3437",
+                        "on-tertiary": "#e6ffed",
+                        "on-tertiary-container": "#456251",
+                        "secondary-dim": "#47555b"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Sans KR", "sans-serif"],
+                        "body": ["Noto Sans KR", "sans-serif"],
+                        "label": ["Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ambient-shadow {
+            box-shadow: 0 8px 24px rgba(43, 52, 55, 0.06);
+        }
+        .glass-overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .status-micro-bar {
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .font-black { font-weight: 900; }
+
+        /* --- 추가된 애니메이션 설정 --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleX {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* 요소가 위로 부드럽게 올라오며 나타나는 클래스 */
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* 진행도 바가 왼쪽부터 차오르는 클래스 */
+        .animate-scale-x {
+            transform-origin: left;
+            transform: scaleX(0);
+            animation: scaleX 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* 순차적인 등장을 위한 딜레이 클래스 */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-600 { animation-delay: 600ms; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+    <nav class="w-full sticky top-0 z-50 bg-[#f8f9fa] dark:bg-slate-950">
+        <div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+            <div class="text-xl font-bold tracking-wider text-[#236774] dark:text-teal-500 font-headline">
+                작업 현황
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="text-[#236774] dark:text-teal-400 font-bold border-b-2 border-[#236774] pb-1 font-headline tracking-tight" href="#">현황</a>
+            </div>
+            <div class="flex items-center space-x-6">
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-[1440px] mx-auto w-full px-12 py-16">
+        
+        <header class="mb-20 grid grid-cols-1 lg:grid-cols-12 items-end animate-fade-in-up delay-100">
+            <div class="lg:col-span-8">
+                <h1 class="font-headline font-black text-[3.5rem] leading-tight tracking-tight text-on-surface mb-4">
+                    이면 스튜디오 작업 현황
+                </h1>
+                <p class="text-on-surface-variant text-xl max-w-xl font-medium">
+                    현재 제작 중인 주요 프로젝트의 실시간 현황입니다.
+                </p>
+            </div>
+            <div class="lg:col-span-4 lg:text-right mt-8 lg:mt-0">
+                <div class="inline-flex flex-col items-end">
+                    <span class="font-headline text-6xl font-black text-primary">1</span>
+                    <span class="font-label text-sm uppercase tracking-widest text-on-surface-variant font-bold">진행 중인 프로젝트</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <div class="group relative bg-surface-container-lowest rounded-xl p-10 ambient-shadow flex flex-col justify-between overflow-hidden min-h-[400px] animate-fade-in-up delay-200">
+                <div class="status-micro-bar bg-surface-variant">
+                    <div class="h-full bg-primary w-[75%] animate-scale-x delay-600"></div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start mb-12">
+                        <div class="flex flex-col">
+                            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-black mb-2">랜딩페이지 작업</span>
+                            <h2 class="font-headline text-3xl font-black text-on-surface tracking-tight">목화 카페 (기획완료, 작업 시작)</h2>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                            <span class="font-label text-xs font-bold uppercase tracking-tighter">진행중</span>
+                        </div>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed max-w-sm font-medium">
+                        카페 사장님의 이쁜 카페를 소개할 수 있는 <br>감성 랜딩페이지 제작 의뢰입니다.<br>2026-03-30
+                    </p>
+                </div>
+                <div class="flex items-center justify-between mt-8">
+                    <div class="flex -space-x-3">
+                        <img alt="Team member" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" src="https://cdn.discordapp.com/attachments/983304455195869194/1488024178627182644/IMG_7674.png?ex=69cb4602&is=69c9f482&hm=35039bd45449137e529331bfd7c9638c5701ce8049c8453e02d63686dd916823&"/>
+                        <div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-black text-on-surface-variant">+2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-surface-container-lowest rounded-xl p-10 ambient-shadow flex flex-col justify-between overflow-hidden min-h-[400px] animate-fade-in-up delay-300">
+                <div class="status-micro-bar bg-surface-variant">
+                    <div class="h-full bg-primary w-[40%] animate-scale-x delay-600"></div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start mb-12">
+                        <div class="flex flex-col">
+                            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-black mb-2">랜딩페이지 작업</span>
+                            <h2 class="font-headline text-3xl font-black text-on-surface tracking-tight">청소똑똑 (작업완료)</h2>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                            <span class="font-label text-xs font-bold uppercase tracking-tighter">작업 완료</span>
+                        </div>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed max-w-sm font-medium">
+                        청소 업체 사장님의 고객과의 연결이 중요한 랜딩페이지 제작 의뢰입니다. (제작기간 : 4일)
+                    </p>
+                </div>
+                <div class="flex items-center justify-between mt-8">
+                    <div class="flex -space-x-3">
+                        <img alt="Team member" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest" src="https://cdn.discordapp.com/attachments/983304455195869194/1488024178627182644/IMG_7674.png?ex=69cb4602&is=69c9f482&hm=35039bd45449137e529331bfd7c9638c5701ce8049c8453e02d63686dd916823&"/>
+                        <div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-surface-container-lowest flex items-center justify-center text-[10px] font-black text-on-surface-variant">+2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="mt-20 p-12 bg-surface-container-low rounded-xl animate-fade-in-up delay-400">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div>
+                    <h3 class="font-headline text-xl font-black text-on-surface mb-2">현재 스튜디오 가동 현황</h3>
+                    <p class="text-on-surface-variant max-w-md font-medium">현재 1개의 프로젝트가 제작 중이며, 최상의 품질 유지를 위해 <br>집중 관리되고 있습니다.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-surface-container-lowest p-6 rounded-lg ambient-shadow flex-1 md:w-48 text-center">
+                        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-1 font-bold">진척도</span>
+                        <span class="text-2xl font-headline font-black text-primary">26%</span>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 rounded-lg ambient-shadow flex-1 md:w-48 text-center">
+                        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant block mb-1 font-bold">서버 상태</span>
+                        <span class="text-2xl font-headline font-black text-primary">양호</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    </body>
+</html>
