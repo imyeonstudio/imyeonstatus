@@ -1,1 +1,134 @@
-서비스 점검중
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>서비스 점검 안내 - The Serene Sentinel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#1a1c1e",
+                        "surface-container-highest": "#333537",
+                        "surface": "#0c0e12",
+                        "on-tertiary-fixed": "#e2e1ff",
+                        "on-tertiary-fixed-variant": "#c8c4f5",
+                        "tertiary-dim": "#bab7e6",
+                        "on-surface-variant": "#c4c7cf",
+                        "surface-variant": "#44474e",
+                        "secondary": "#bfc8d2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2b2f33",
+                        "on-primary-fixed-variant": "#d1e4ff",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "tertiary": "#c8c4f5",
+                        "on-secondary-fixed-variant": "#dde3ea",
+                        "inverse-surface": "#e2e2e6",
+                        "secondary-fixed-dim": "#bfc8d2",
+                        "tertiary-fixed-dim": "#bab7e6",
+                        "surface-tint": "#a4cdf6",
+                        "primary-container": "#174567",
+                        "primary": "#a4cdf6",
+                        "outline-variant": "#44474e",
+                        "primary-dim": "#97c0e8",
+                        "surface-container": "#1d2024",
+                        "on-tertiary-container": "#e2e1ff",
+                        "on-secondary-fixed": "#1a1c1e",
+                        "on-secondary": "#28323c",
+                        "on-tertiary": "#2e2d4d",
+                        "primary-fixed-dim": "#97c0e8",
+                        "outline": "#8e9199",
+                        "tertiary-container": "#45466f",
+                        "inverse-on-surface": "#2e3033",
+                        "secondary-fixed": "#d9e3ef",
+                        "on-secondary-container": "#d9e3ef",
+                        "surface-container-low": "#191c20",
+                        "secondary-dim": "#bfc8d2",
+                        "background": "#0c0e12",
+                        "on-surface": "#e2e2e6",
+                        "surface-dim": "#0c0e12",
+                        "on-primary": "#003355",
+                        "surface-container-lowest": "#07090c",
+                        "on-primary-container": "#d1e4ff",
+                        "inverse-primary": "#396286",
+                        "tertiary-fixed": "#e2e1ff",
+                        "on-background": "#e2e2e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "Noto Sans KR", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans KR", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .pulse-dot {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex items-center justify-center overflow-hidden">
+<!-- Main Content Canvas -->
+<main class="w-full max-w-4xl px-6 py-12 flex flex-col items-center justify-center">
+<div class="w-full text-center space-y-12">
+<!-- Status Badge -->
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-container/20 border border-primary/20 mx-auto">
+<span class="w-2 h-2 rounded-full bg-primary pulse-dot"></span>
+<span class="text-primary font-semibold text-sm tracking-wide font-label uppercase">시스템 최적화 진행 중</span>
+</div>
+<!-- Heading & Description -->
+<div class="space-y-6">
+<h1 class="font-headline font-extrabold text-5xl md:text-8xl text-on-surface tracking-tight leading-tight">
+                    서비스 점검 안내
+                </h1>
+<p class="text-on-surface-variant text-lg md:text-2xl max-w-2xl mx-auto leading-relaxed font-medium">
+                    더 나은 서비스를 위해 현재 시스템 점검 중입니다.<br class="hidden md:block"/>
+                    잠시만 기다려 주시면 보다 쾌적한 환경으로 찾아뵙겠습니다.
+                </p>
+</div>
+<!-- Minimal Stats -->
+<div class="grid bg-outline-variant/30 max-w-xl mx-auto rounded-2xl overflow-hidden border border-outline-variant/30">
+<div class="bg-surface-container-low p-8 space-y-2 text-center">
+<span class="text-[11px] uppercase tracking-[0.2em] text-outline font-bold font-label block">예정 완료 시간</span>
+<div class="text-3xl font-headline font-bold text-primary">20:00</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+<button class="w-full sm:w-auto px-12 py-5 text-primary border border-primary/20 hover:bg-primary/5 font-bold rounded-xl transition-colors inline-flex items-center justify-center gap-2">
+<span>고객지원 센터</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Support Link -->
+<div class="pt-8 opacity-60">
+<p class="text-xs text-outline font-label mb-2 uppercase tracking-widest">긴급 문의가 필요하신가요?</p>
+<a class="text-primary font-bold hover:text-primary-dim transition-colors" href="mailto:support@serene-sentinel.com">support@serene-sentinel.com</a>
+</div>
+</div>
+</main>
+</body></html>
